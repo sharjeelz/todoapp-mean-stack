@@ -1,4 +1,4 @@
-# Todoapp-mean-stack
+# Todoapp MEAN Stack
 MEAN stack sample application, Angularjs, mongodb, express, nodejs
 
 # Configure
