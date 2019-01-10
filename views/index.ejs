@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html ng-app="todoapp">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MEAN Stack</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/app.css"/>
+    <link rel="stylesheet" href="/assets/css/bootsrap.css"/>
+   <script src="/assets/js/angularjs.js"></script>
+   <script src="/assets/js/angular-animation.js"></script>
+   <script src="/assets/js/app.js"></script>
+
+
+</head>
+<body ng-controller="TodoController">
+    <nav class="navbar navbar-default bg-primary">
+        <span class="navbar-brand mb-0 h1 hoverh1">Todo's</span>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+         <div class="col-md-6 border-dark">
+        <div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Add New Todo</h1>
+    <p class="lead">
+     <form ng-submit="add()">
+                <div class="form-group">
+                    <input class="form-control" type="text" ng-model="todoText">
+                </div>
+                <div class="form-group">
+                    <input class="btn-primary form-control" type="submit" value="Add New Todo">
+                </div>
+            </form>
+            </p>
+  </div>
+</div>
+
+        </div>
+            <div class="col-md-6 border-right">
+                <div class="list-group list-group-flush">
+                 <a href="" ng-click="update(todo)"   ng-repeat="todo in todos"class="animate-repeat list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 ng-class='{done: todo.isDone}' class="mb-1">{{todo.todo}}</h5>
+                        <small>{{todo.created_at | date:"MMM/dd/yy 'at' h:mma"}}</small>
+
+                    </div>
+                        <!-- <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p> -->
+                           <span ng-click="remove(todo)" class="badge badge-danger badge-pill">Delete</span>
+
+                            <span ng-if="!todo.isDone"  ng-click="done(todo,$event)" class="badge badge-warning badge-pill">Done</span>
+                            <span ng-if="todo.isDone"  ng-click="undone(todo,$event)" class="badge badge-primary badge-pill">Undone</span>
+
+
+                </a>
+
+
+                </div>
+            </div>
+
+
+    </div>
+    </div>
+
+</body>
+
+<script>
+
+var serverdata= <%- JSON.stringify(data); %>
+</script>
+
+</html>
