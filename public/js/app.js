@@ -41,8 +41,17 @@ app.controller('TodoController',function($scope,$http){
       };
 
     $scope.remove = function(value) {
+
+
+
         $http.delete('/api/todo/'+value._id).then(function(res){
-            $scope.todos.shift();
+
+            //console.log((value._id));
+
+          //  delete value._id;
+
+
+            $scope.todos.splice( $scope.todos.indexOf(value),1);
             if(res.status==200 && res.data=="Deleted"){
 
             }
@@ -52,6 +61,7 @@ app.controller('TodoController',function($scope,$http){
         });
       };
       $scope.add = function() {
+
 
 
 

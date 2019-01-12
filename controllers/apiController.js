@@ -2,7 +2,14 @@ var Todo= require('../models/todoModel');
 var express = require('express');
 var router= express.Router();
 
+//upload image
 
+router.post('/api/todo/pic',function(req, res){
+
+
+    res.send(req.body);
+
+});
 
 
     //get todo by user
@@ -61,8 +68,8 @@ var router= express.Router();
 
     router.post('/api/todo/done',function(req,res){
 
-            Todo.findByIdAndUpdate(req.body.id,{isDone:req.body.isDone},function(err,result){
-            if(err) throw err;
+            Todo.findOneAndUpdate({_id:req.body.id},{isDone:req.body.isDone},function(err,result){
+            if(err) console.log( err);
             res.send(result);
 
         });

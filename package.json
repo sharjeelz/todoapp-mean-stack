@@ -4,21 +4,20 @@
   "description": "MEAN stack sample application, Angularjs, mongodb, express, nodejs",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app"
   },
   "author": "Sharjeel Zuabir",
   "license": "ISC",
   "dependencies": {
-
     "body-parser": "^1.18.3",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "grunt": "^1.0.3",
     "http-errors": "^1.7.1",
-    "mongoose": "^5.4.2"
+    "mongoose": "^5.4.2",
+    "mysql": "^2.16.0"
   },
   "devDependencies": {
     "angular-timeago": "^0.4.6"
   }
-
 }

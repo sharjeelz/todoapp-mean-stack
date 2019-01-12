@@ -1,2 +1,4 @@
 node_modules
 public/src/*
+data/db/*
+config/config.json

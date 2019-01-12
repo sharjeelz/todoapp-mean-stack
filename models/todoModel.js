@@ -7,18 +7,13 @@ var todoSchema= new Schema({
     todo : String,
     isDone: Boolean,
     hasAttachement: Boolean,
-    created_at : { type : Date, default: Date.now },
-    updated_at: {type : Date}
+    created_at : { type : Date, default: Date.now }
 
 
 });
 
 
 
-  todoSchema.pre('findByIdAndUpdate', function(done) {
-    this.updated_at = Date.now();
-    done();
-  });
 
 
 var Todo = mongoose.model('Todos',todoSchema);
