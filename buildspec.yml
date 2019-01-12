@@ -19,4 +19,5 @@ phases:
       - echo Build completed on `date`
 artifacts:
   files:
-    - anody.zip
+    - '**/*'
+   discard-paths: no
